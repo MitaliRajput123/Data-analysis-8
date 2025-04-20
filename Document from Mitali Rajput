@@ -1,0 +1,23 @@
+create database task4;
+use task4;
+create table employees (emp_id int(4) ,emp_name varchar (20),salary int(5),years int(4));
+insert into employees (emp_id ,emp_name, salary,years)
+value (1021, 'Rahul singh',20000, 2023),(1003, 'karam veer singh',21000, 2023),(1014, 'Seema singh',22000, 2023),(1001, 'Aman singh',26000, 2023),
+(1044, 'Mansi singh',28000, 2023),(1224, 'karan singh',20000, 2023);
+select*from employees;
+alter table employees add column age int(2);
+insert into employees (age)
+value (32),(27),(29),(30),(40),(33);
+Alter table employees drop column age ;
+create table Sales (Order_id int(4) primary key ,Customer_name varchar (20),Items int(5),Order_date date, Product_id int(4),Ammount int(5));
+insert into Sales (Order_id ,Customer_name, Items, Order_date ,Product_id,Ammount)
+value (1041, 'Rahul',22, '2023-12-03', 100,10000),(1856, 'Ranveer ',12,'2023-04-01',200,20000),(1594, 'Sam',20, '2023-12-06',300,30000),
+(1549, 'Anamika',26,'2023-10-11',400,50000),(1114, 'Man singh',28, '2023-09-04',500,70000),(1124, 'kanah',20,'2023-06-09',600,50000);
+select *from sales;
+select sum(Ammount)from Sales;
+select max(ammount) ,min(Ammount) from Sales;
+select Customer_name ,Ammount from Sales order by Ammount asc ;
+select count(*) from Sales;
+select avg(Ammount) from Sales;
+select count(distinct Order_id) from Sales;
+
